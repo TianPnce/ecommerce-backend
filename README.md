@@ -35,6 +35,7 @@ THEN I am able to successfully create, update, and delete data in my database
 ```
 
 ## Walkthrough 
+[E-Commerce Back End Walkthrough](https://watch.screencastify.com/v/wLIWf1FcJ2PZNxhe1nZM)
 
 ## Installation
 - Run `npm i` to install all dependencies 
@@ -51,7 +52,7 @@ THEN I am able to successfully create, update, and delete data in my database
 - JavaScript
 
 ## Notes
-Troubles that I ran into mainly had to do with my seed files, however once I was able to sort out that issue everything worked perfectly.
+Troubles that I ran into mainly had to do with my seed files, as well with my routes along with a few typos however once I was able to sort out that issue everything worked perfectly.
 
 ## Questions
 [TianPnce](https://github.com/TianPnce)
