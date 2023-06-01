@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models/modelIndex');
+const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   Category.findAll({
     include: {
       model: Product,
-      attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+      attributes: ['id', 'product_name', 'prices', 'stock', 'category_id']
     }
   })
   .then(dbCategoryData => {
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
     },
     include: {
       model: Product,
-      attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+      attributes: ['id', 'product_name', 'prices', 'stock', 'category_id']
     }
   })
   .then(dbCategoryData => {
@@ -81,13 +81,11 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
   Category.delete({
     where: {
       id: req.params.id
     }
-  })
-  .then(dbCategoryData => {
+  }).then(dbCategoryData => {
     if(!dbCategoryData) {
       res.status(404).json({message: 'No category found with this id'});
     }
